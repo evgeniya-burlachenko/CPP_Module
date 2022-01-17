@@ -2,6 +2,7 @@
 # define PHONEBOOK_CLASS_HPP
 //телефонная книга - экземпляр класса
 #include "contact.hpp"
+#include <iomanip>
 
 class Phonebook
 {
