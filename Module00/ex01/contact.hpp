@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   contact.hpp                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: skelly <skelly@student.21-school.ru>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/01/18 09:03:31 by skelly            #+#    #+#             */
+/*   Updated: 2022/01/18 09:03:32 by skelly           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef CONTACT_CLASS_HPP
 # define CONTACT_CLASS_HPP
 //контакт - экземпляр класса
@@ -14,7 +26,7 @@ class Contact
 		std::string darkest_secret;
 
 		Contact(std::string data[]);
-		Contact();
+		Contact();//конструктор по умолчанию
 		~Contact();
 };
 

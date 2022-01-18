@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: skelly <skelly@student.21-school.ru>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/01/18 09:03:34 by skelly            #+#    #+#             */
+/*   Updated: 2022/01/18 09:03:35 by skelly           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "phonebook.hpp"
 
 void check_input(Phonebook book)
@@ -7,6 +19,7 @@ void check_input(Phonebook book)
 	i = 0;
 	while (i < book.size)
 	{
+		//setwidth - ширина вывода
 		std::cout << std::setw(10);
 		std::cout << std::setw(10) << i + 1 << '|';
 
@@ -52,16 +65,16 @@ void	display_contact(Phonebook book)
 
 int main (void)
 {
-	Phonebook	book;//обьект класса
+	Phonebook	book;//обьект класса вместе с ним создаются 8 пустых обтектов контактов
 	std::string command;
-	std::string contact[5];
+	std::string contact[5];//массив строк которые буду добавлять в контакты
 
 	std::cout << "Enter your command: ";
 	std::cin >> command;
-	while (command != "EXIT")
+	while (command != "EXIT")//сравнение 2 строк
 	{
 		if (command == "ADD")
-		{
+		{//приглашение на ввод полей - фоомирую массив
 			std::cout << "Enter first name: ";
 			std::cin >> contact[0];
 			std::cout << "Enter last name: ";
@@ -72,11 +85,14 @@ int main (void)
 			std::cin >> contact[3];
 			std::cout << "Enter darkes secret: ";
 			std::cin >> contact[4];
+			// когда массив сформирован переда/ массив в обьект book вызываю его с мотодом add contact и передаю туда
+
 			book.add_contact(Contact(contact));
 			std::cout << "contact added successfully!" << std::endl;
 		}
 		else if (command == "SEARCH")
 		{
+			
 			check_input(book);
 			display_contact(book);
 		}
