@@ -6,7 +6,7 @@
 /*   By: skelly <skelly@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 09:03:34 by skelly            #+#    #+#             */
-/*   Updated: 2022/01/18 09:03:35 by skelly           ###   ########.fr       */
+/*   Updated: 2022/01/19 12:59:30 by skelly           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,20 +23,20 @@ void check_input(Phonebook book)
 		std::cout << std::setw(10);
 		std::cout << std::setw(10) << i + 1 << '|';
 
-		if (book.array[i].first_name.size() > 10)
-			std::cout << std::setw(10) << book.array[i].first_name.substr(0, 9) + '.'<< '|';
+		if (book.arr[i].first_name.size() > 10)
+			std::cout << std::setw(10) << book.arr[i].first_name.substr(0, 9) + '.'<< '|';
 		else
-			std::cout << std::setw(10) << book.array[i].first_name  << '|';
+			std::cout << std::setw(10) << book.arr[i].first_name  << '|';
 		
-		if (book.array[i].last_name.size() > 10)
-			std::cout << std::setw(10) << book.array[i].last_name.substr(0, 9) + '.'<< '|';
+		if (book.arr[i].last_name.size() > 10)
+			std::cout << std::setw(10) << book.arr[i].last_name.substr(0, 9) + '.'<< '|';
 		else
-			std::cout << std::setw(10) << book.array[i].last_name << '|';
+			std::cout << std::setw(10) << book.arr[i].last_name << '|';
 		
-		if (book.array[i].nickname.size() > 10)
-			std::cout << std::setw(10) << book.array[i].nickname.substr(0, 9) + '.';
+		if (book.arr[i].nickname.size() > 10)
+			std::cout << std::setw(10) << book.arr[i].nickname.substr(0, 9) + '.';
 		else
-			std::cout  << std::setw(10) << book.array[i].nickname;
+			std::cout  << std::setw(10) << book.arr[i].nickname;
 		
 		std::cout << std::endl;
 		i++;
@@ -53,11 +53,11 @@ void	display_contact(Phonebook book)
 	index = atoi(buf.c_str());
 	if(index >= 1 && index <= book.size)
 	{
-		std::cout << "first name: " << book.array[index - 1].first_name << std::endl;
-		std::cout << "last name: " << book.array[index - 1].last_name << std::endl;
-		std::cout << "nickname: " << book.array[index - 1].nickname << std::endl;
-		std::cout << "phone number: " << book.array[index - 1].phone_number << std::endl;
-		std::cout << "darkest secret: " << book.array[index - 1].darkest_secret << std::endl;
+		std::cout << "first name: " << book.arr[index - 1].first_name << std::endl;
+		std::cout << "last name: " << book.arr[index - 1].last_name << std::endl;
+		std::cout << "nickname: " << book.arr[index - 1].nickname << std::endl;
+		std::cout << "phone number: " << book.arr[index - 1].phone_number << std::endl;
+		std::cout << "darkest secret: " << book.arr[index - 1].darkest_secret << std::endl;
 	}
 	else
 		std::cout << "invalid index\n";

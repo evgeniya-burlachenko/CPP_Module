@@ -6,14 +6,14 @@
 #    By: skelly <skelly@student.21-school.ru>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/18 09:03:38 by skelly            #+#    #+#              #
-#    Updated: 2022/01/18 10:00:43 by skelly           ###   ########.fr        #
+#    Updated: 2022/01/18 20:03:57 by skelly           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		=	Account
 HEADER		=	Account.hpp 
-CXX			=	g++ 
-CFLAGS		=	-Wall -Wextra -Werror
+CXX			=	c++
+CFLAGS		=	-Wall -Wextra -Werror -std=c++98
 SRCS		=	Account.cpp tests.cpp
 OBJ			=	$(SRCS:.cpp=.o)
 

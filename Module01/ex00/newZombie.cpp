@@ -6,7 +6,7 @@
 /*   By: skelly <skelly@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 20:41:02 by skelly            #+#    #+#             */
-/*   Updated: 2022/01/19 15:54:30 by skelly           ###   ########.fr       */
+/*   Updated: 2022/01/19 22:55:53 by skelly           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 Zombie* newZombie(std::string name)
 {
-	Zombie *new_zombie;
+	Zombie *new_zombie = new Zombie(name);
 	
 	//оператор new - выделения памяти не на стеке, а оперативная выделение памяти
 	//если в сторонеей ф-ции вызываем ф-цию с именем класса - это значит мы вызываем конструктор
-	new_zombie = new Zombie(name);
+	//new_zombie = 
 	return(new_zombie);
 	
 }

@@ -6,14 +6,14 @@
 #    By: skelly <skelly@student.21-school.ru>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/18 09:03:38 by skelly            #+#    #+#              #
-#    Updated: 2022/01/18 09:53:05 by skelly           ###   ########.fr        #
+#    Updated: 2022/01/18 20:03:48 by skelly           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		=	PhoneBook
 HEADER		=	phonebook.hpp contact.hpp
-CXX			=	g++ 
-CFLAGS		=	-Wall -Wextra -Werror
+CXX			=	c++
+CFLAGS		=	-Wall -Wextra -Werror -std=c++98
 SRCS		=	phonebook.cpp contact.cpp main.cpp
 OBJ			=	$(SRCS:.cpp=.o)
 

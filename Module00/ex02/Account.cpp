@@ -6,7 +6,7 @@
 /*   By: skelly <skelly@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 09:28:15 by skelly            #+#    #+#             */
-/*   Updated: 2022/01/18 14:12:14 by skelly           ###   ########.fr       */
+/*   Updated: 2022/01/18 14:54:52 by skelly           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,8 +84,8 @@ void Account::_displayTimestamp(void)
 //------------------------------------------------------------------------
 //displayAccountsInfos
 //displayStatus
-//makeDeposit
-//makeWithdrawal
+//makeDeposit - кладутся деньги на депозит
+//makeWithdrawal - снимаются деньги с депозита
 
 void Account::displayAccountsInfos(void)
 {
