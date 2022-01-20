@@ -1,0 +1,30 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   HumanA.hpp                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: skelly <skelly@student.21-school.ru>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/01/20 10:39:08 by skelly            #+#    #+#             */
+/*   Updated: 2022/01/20 10:50:32 by skelly           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef HUMANA_HPP
+# define HUMANA_HPP
+
+#include <iostream>
+#include "Weapon.hpp"
+
+class HumanA
+{
+	std::string name;
+	Weapon &weapon;//оружие через ссылку
+	public:
+		HumanA(std::string name, Weapon &weapon);
+		~HumanA(void);
+		void	attack(void);
+		
+};
+
+#endif
