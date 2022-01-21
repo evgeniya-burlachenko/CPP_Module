@@ -57,12 +57,3 @@ int main(int ac, char **av)
 	out.close();
 	return 0;
 }
-
-// if ((pos = line.find(s1)) != std::string::npos)
-// 		{
-
-// 			line.erase(pos, s1.size());
-// 			line.insert(pos, s2);
-// 		}
-// 		else
-// 			std::cout << "Not found\n";
