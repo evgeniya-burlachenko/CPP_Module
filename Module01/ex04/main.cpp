@@ -16,7 +16,7 @@ int main(int ac, char **av)
 	std::string	s1 = av[2];
 	std::string	s2 = av[3];
 	std::string filename = av[1];
-	std::string	line;
+	std::string	buf;
 
 	std::ifstream in(av[1]);
 	if (!in)
@@ -31,7 +31,7 @@ int main(int ac, char **av)
 		std::cout << "Error output file" << std::endl;
 		return 1;
 	}
-	while (std::getline(in, line))
+	while (std::getline(in, buf)) ////сччтываем массив символов
 	{
 		std::size_t pos = 0;
 		//npos — статическое константное значение члена с 
@@ -40,22 +40,29 @@ int main(int ac, char **av)
 		//(или sublen ) в функциях-членах string означает «до конца строки» .
 // 		find не может возвращать -1, поскольку возвращает тип size_t. Но физически string::npos действительно совпадает с -1.
 // string::npos == (size_t)-1
-		if ((pos = line.find(s1)) != std::string::npos)
+		if ((pos = buf.find(s1)) != std::string::npos)
 		{
 
 			//iterator erase (iterator starting_position, iterator ending_position);
 			// erase () используется для удаления нескольких элементов
 			//на основе позиции, указанной в первом и втором аргументах этой функции.
-			line.erase(pos, s1.size());
+			buf.erase(pos, s1.size());
 			//функция insert () используется для вставки значения аргумента value перед позицией элемента ,
 			//упомянутого аргументом position. Он возвращает итератор, указывающий на вновь вставленный элемент .
-			line.insert(pos, s2);
+			buf.insert(pos, s2);
 		}
-		else
-			std::cout << "Not found\n";
-		out << line << std::endl;
+		out << buf << std::endl; //// выводим то, что считали в out
 	}
 	in.close();
 	out.close();
 	return 0;
 }
+
+// if ((pos = line.find(s1)) != std::string::npos)
+// 		{
+
+// 			line.erase(pos, s1.size());
+// 			line.insert(pos, s2);
+// 		}
+// 		else
+// 			std::cout << "Not found\n";
