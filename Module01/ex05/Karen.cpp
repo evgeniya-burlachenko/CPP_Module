@@ -6,7 +6,7 @@
 /*   By: skelly <skelly@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/21 20:28:44 by skelly            #+#    #+#             */
-/*   Updated: 2022/01/21 21:29:07 by skelly           ###   ########.fr       */
+/*   Updated: 2022/01/21 21:41:18 by skelly           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,5 @@ void Karen::complain(std::string level)
 	int i = 0;
 	while (i < 4 && level != array[i])
 		i++;
-	//Вычисляет количество элементов между first и last .
 	(this->*func[i])();
 }
