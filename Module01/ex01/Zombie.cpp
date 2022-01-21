@@ -7,7 +7,7 @@ Zombie::Zombie(std::string str)
 
 Zombie::Zombie()
 {
-    std::cout << "Zombie created" << std::endl;
+    //std::cout << "Zombie created" << std::endl;
 }
 
 Zombie::~Zombie(void)
