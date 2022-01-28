@@ -7,14 +7,14 @@ Zombie::Zombie(std::string str)
 
 Zombie::Zombie()
 {
-    //std::cout << "Zombie created" << std::endl;
+
 }
 
 Zombie::~Zombie(void)
 {
 	std::cout << this->name << " died" << std::endl;//деструктор
 }
-//обьявление имени
+
 void Zombie::announce(void)
 {
 	std::cout << this->name << " BraiiiiiiinnnzzzZ..." << std::endl;
@@ -23,5 +23,5 @@ void Zombie::announce(void)
 void Zombie::set_name(std::string str)
 {
 	//std::cout << str << " BraiiiiiiinnnzzzZ..." << std::endl;
-	this->name = str;
+	 this->name = str;
 }

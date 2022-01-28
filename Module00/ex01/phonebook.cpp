@@ -6,7 +6,7 @@
 /*   By: skelly <skelly@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 09:03:41 by skelly            #+#    #+#             */
-/*   Updated: 2022/01/19 22:28:07 by skelly           ###   ########.fr       */
+/*   Updated: 2022/01/26 17:24:19 by skelly           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 Phonebook::Phonebook()
 {
-	//инициализирую записываю в поле size 0
 	this->size = 0;
 	return ;
 }
@@ -22,17 +21,36 @@ Phonebook::Phonebook()
 Phonebook::~Phonebook()
 {
 	//ничего не делаю тк не выделяю память
-	return ;
 }
-//метод добавление контакта
+
+int	Phonebook::getSize(void)
+{
+	return (this->size);
+}
+
+void	Phonebook::setSize(int size)
+{
+   this->size = size;
+}
+
+Contact Phonebook::getArr(int size)
+{
+   return(this->arr[size]);
+}
+
+void	Phonebook::setArr(Contact arr[])
+{
+   this->arr[size] = arr[size];
+}
+	
 void	Phonebook::add_contact(Contact new_contact)
 {
 	int	i;
 
-	i = 0;
-	while(i < this->size)// 1 доступный индекс в зав-ти от текущего размсера
-		i++;
-	if(i == 8) //если 8 и переполнение
+	i = -1;
+	while(++i < this->size)// 1 доступный индекс в зав-ти от текущего размера
+		;
+	if(i == 8)
 	{
 		i = 0;
 		while (i < 8 - 1)
@@ -42,11 +60,8 @@ void	Phonebook::add_contact(Contact new_contact)
 			this->arr[i] = this->arr[i + 1];
 			i++;
 		}
-		//уменьшаю на 1 тк ниже добавться 1
 		this->size -= 1;
 	}
-	//если не равен 8 то добавляю контакт в этот индекс
 	this->arr[i] = new_contact; 
-	//увеличиваю размер на 1
 	this->size += 1;
 }

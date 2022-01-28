@@ -6,24 +6,25 @@
 /*   By: skelly <skelly@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 20:35:36 by skelly            #+#    #+#             */
-/*   Updated: 2022/01/19 21:13:08 by skelly           ###   ########.fr       */
+/*   Updated: 2022/01/26 19:28:23 by skelly           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
-
+//задание по распределению памяти:
+//1. на стеке - zombie
+//2. на куче - zombie2
+//3. на стеке - рандом
 int main(void)
 {
-	//Переменная класса Zombie
 	Zombie	zombie("Zombie_on_stack");
 	zombie.announce();
-	//zombie2 создаю динамическим выделением памяти
-	//указатель на обьект типа Zombie
-	Zombie *zombie2;
-	zombie2 = newZombie("Zombie_on_heach");
+	
+	Zombie *zombie2 = newZombie("Zombie_on_heach");
 	zombie2->announce();
-	//функция, которая создает зомби и заставляет его объявить о себе.
+
 	randomChump("Zombie_randomChump_on_stack");
-	delete zombie2; //связка new-delete (аналогично malloc-free)
+	delete zombie2; 
+	//связка new-delete (аналогично malloc-free)
 }
 

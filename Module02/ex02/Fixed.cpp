@@ -1,0 +1,217 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: skelly <skelly@student.21-school.ru>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/01/24 22:15:14 by skelly            #+#    #+#             */
+/*   Updated: 2022/01/28 10:17:19 by skelly           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "Fixed.hpp"
+
+Fixed::Fixed()
+{
+	this->fixed_point_value = 0;
+}
+
+Fixed::~Fixed()
+{
+	
+}
+//конструктор копирования (принимаю по константной ссылке)
+Fixed::Fixed(const Fixed &fixed)
+{
+	*this = fixed;
+}
+//ф-ция перегрузки операций присваивания
+Fixed &Fixed::operator=(const Fixed &fixed)
+{
+	this->fixed_point_value = fixed.getRawBits();
+	//возвращаю адрес на константынй обьект, которому выполнила присваивание
+	return *this;
+}
+
+int Fixed::getRawBits(void) const
+{
+	return(this->fixed_point_value);
+}
+
+void Fixed::setRawBits(int const raw)
+{
+	this->fixed_point_value = raw;
+	
+}
+Fixed::Fixed(const int value)
+{
+	//std::cout << "Int constructor called"  <<this<< std::endl;
+	this->fixed_point_value = value << fractional_bits;
+}
+
+Fixed::Fixed(const float value)
+{
+	//int a;
+	
+	//std::cout << "Float constructor called"  <<this<< std::endl;
+	//сдвиг битового шаблона числа вправо на 1 бит всегда делит число на 2. 
+	//Точно так же сдвиг числа влево на 1 бит умножает число на 2.
+	//a = 1 << fractional_bits;
+	this->fixed_point_value = roundf( value * int(1 << fractional_bits));
+}
+
+float Fixed::toFloat(void) const
+{
+	return(this->fixed_point_value /float( 1 << fractional_bits));
+}
+
+int Fixed::toInt(void) const
+{
+	return (this->fixed_point_value >> fractional_bits);
+}
+
+std::ostream& operator<<(std::ostream &out, const Fixed &fixed)
+{
+	out << fixed.toFloat();
+	return (out);
+}
+//--------------------- >, <, >=, <=, == and != -----------------------------------------
+bool Fixed::operator>(Fixed fixed)const 
+{
+	if (this->getRawBits() > fixed.getRawBits())
+		return(true);
+	return(false);
+}
+
+bool Fixed::operator<(Fixed fixed)const
+{
+	if(this->getRawBits() < fixed.getRawBits())
+		return(true);
+	return(false);
+}
+
+bool Fixed::operator>=(Fixed fixed)const 
+{
+	if (this->getRawBits() >= fixed.getRawBits())
+		return (true);
+	return (false);
+}
+
+bool Fixed::operator<=(Fixed fixed)const 
+{
+	if (this->getRawBits() <= fixed.getRawBits())
+		return (true);
+	return (false);
+}
+
+bool Fixed::operator==( Fixed fixed)const
+{
+	if(this->getRawBits() > fixed.getRawBits())
+		return (true);
+	return (false);
+}
+
+bool Fixed::operator!=( Fixed fixed)const
+{
+	if(this->getRawBits() > fixed.getRawBits())
+		return (true);
+	return (false);
+}
+//---------------------- +, -, *, / --------------------------------
+Fixed Fixed::operator+(Fixed fixed )const
+{
+	Fixed res;
+	
+	res.setRawBits(this->getRawBits() + fixed.getRawBits());
+	return(res);
+	
+}
+
+Fixed Fixed::operator-( Fixed fixed)const
+{
+	Fixed res;
+	
+	res.setRawBits(this->getRawBits() - fixed.getRawBits());
+	return(res);
+	
+}
+
+Fixed Fixed::operator*( Fixed fixed)const
+{
+	Fixed res;
+	long temp;
+	
+	temp = (this->getRawBits() * fixed.getRawBits());
+	res.setRawBits(temp);
+	return(res);
+	
+}
+
+Fixed Fixed::operator/( Fixed fixed)const
+{
+	Fixed res;
+	long temp;
+	//int b;
+	
+	temp = (this->getRawBits() / fixed.getRawBits());
+	//b = 1  << fractional_bits;
+	res.setRawBits(round(temp * (1  << fractional_bits)));
+	return(res);
+	
+}
+//--------------------------- ++ -- ---------------------------	
+Fixed	&Fixed::operator++()
+{
+	this->fixed_point_value += 1;
+	return(*this);
+	
+}
+
+Fixed Fixed::operator++(int) //постфиксная запись - int
+{
+	Fixed temp(*this);
+
+	this->fixed_point_value += 1;
+	return(temp);
+}
+Fixed &Fixed::operator--()
+{
+	this->fixed_point_value -= 1;
+	return(*this);
+	
+}
+Fixed Fixed::operator--(int)//постфиксная запись - int
+{
+	Fixed temp(*this);
+
+	--(*this);
+	return(temp);	
+}
+
+Fixed &Fixed::min(Fixed &a, Fixed &b)
+{
+	if (a < b)
+		return(a);
+	return(b);
+}
+
+const Fixed &Fixed::min(Fixed const &a, Fixed const &b)
+{
+    if (a < b)
+        return (a);
+    return (b);
+}
+Fixed &Fixed::max(Fixed &a, Fixed &b)
+{
+	if (a > b)
+		return(a);
+	return(b);
+}
+
+const Fixed &Fixed::max(Fixed const &a, Fixed  const &b)
+{
+	if (a > b)
+		return(a);
+	return(b);
+}

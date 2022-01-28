@@ -6,7 +6,7 @@
 /*   By: skelly <skelly@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 09:03:45 by skelly            #+#    #+#             */
-/*   Updated: 2022/01/19 12:41:17 by skelly           ###   ########.fr       */
+/*   Updated: 2022/01/26 17:26:41 by skelly           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,20 @@
 
 class Phonebook
 {
+	int size;
+	Contact arr[8]; //массив контактов
 	public:
-	
-		Contact arr[8]; //массив контактов
-		int size;
 //Конструктор — функция, предназначенная для инициализации объектов класса.
 //Деструктор обеспечивает соответствующую очистку объектов указанного типа.
-		Phonebook();//конструктор
+		Phonebook();
 		~Phonebook();
+
+		int getSize(void);
+		void setSize(int size);
+
+		Contact getArr(int size);
+		void setArr(Contact arr[]);
+
 		void add_contact(Contact new_contact);
 };
 

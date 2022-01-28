@@ -6,7 +6,7 @@
 /*   By: skelly <skelly@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 09:03:34 by skelly            #+#    #+#             */
-/*   Updated: 2022/01/19 12:59:30 by skelly           ###   ########.fr       */
+/*   Updated: 2022/01/26 17:11:57 by skelly           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,32 +14,29 @@
 
 void check_input(Phonebook book)
 {
-	int	i;
 	std::cout << "     index|first name| last name|  nickname" << std::endl;
-	i = 0;
-	while (i < book.size)
+	for (int i = 0; i < book.getSize(); i++)
 	{
 		//setwidth - ширина вывода
 		std::cout << std::setw(10);
 		std::cout << std::setw(10) << i + 1 << '|';
 
-		if (book.arr[i].first_name.size() > 10)
-			std::cout << std::setw(10) << book.arr[i].first_name.substr(0, 9) + '.'<< '|';
+		if (book.getArr(i).get_first_name().size() > 10)
+			std::cout << std::setw(10) << book.getArr(i).get_first_name().substr(0, 9) + '.'<< '|';
 		else
-			std::cout << std::setw(10) << book.arr[i].first_name  << '|';
+			std::cout << std::setw(10) << book.getArr(i).get_first_name()  << '|';
 		
-		if (book.arr[i].last_name.size() > 10)
-			std::cout << std::setw(10) << book.arr[i].last_name.substr(0, 9) + '.'<< '|';
+		if (book.getArr(i).get_last_name().size() > 10)
+			std::cout << std::setw(10) << book.getArr(i).get_last_name().substr(0, 9) + '.'<< '|';
 		else
-			std::cout << std::setw(10) << book.arr[i].last_name << '|';
+			std::cout << std::setw(10) << book.getArr(i).get_last_name() << '|';
 		
-		if (book.arr[i].nickname.size() > 10)
-			std::cout << std::setw(10) << book.arr[i].nickname.substr(0, 9) + '.';
+		if (book.getArr(i).get_nickname().size() > 10)
+			std::cout << std::setw(10) << book.getArr(i).get_nickname().substr(0, 9) + '.';
 		else
-			std::cout  << std::setw(10) << book.arr[i].nickname;
+			std::cout  << std::setw(10) << book.getArr(i).get_nickname();
 		
 		std::cout << std::endl;
-		i++;
 	}
 }
 
@@ -51,13 +48,14 @@ void	display_contact(Phonebook book)
 	std::cout << "Enter index : ";
 	std::cin >> buf;
 	index = atoi(buf.c_str());
-	if(index >= 1 && index <= book.size)
+	//c_str = Преобразует содержимое String в строку в стиле C, заканчивающуюся нулем.
+	if(index >= 1 && index <= book.getSize())
 	{
-		std::cout << "first name: " << book.arr[index - 1].first_name << std::endl;
-		std::cout << "last name: " << book.arr[index - 1].last_name << std::endl;
-		std::cout << "nickname: " << book.arr[index - 1].nickname << std::endl;
-		std::cout << "phone number: " << book.arr[index - 1].phone_number << std::endl;
-		std::cout << "darkest secret: " << book.arr[index - 1].darkest_secret << std::endl;
+		std::cout << "first name: " << book.getArr(index - 1).get_first_name() << std::endl;
+		std::cout << "last name: " << book.getArr(index - 1).get_last_name() << std::endl;
+		std::cout << "nickname: " << book.getArr(index - 1).get_nickname() << std::endl;
+		std::cout << "phone number: " << book.getArr(index - 1).get_phone_number() << std::endl;
+		std::cout << "darkest secret: " << book.getArr(index - 1).get_darkest_secret() << std::endl;
 	}
 	else
 		std::cout << "invalid index\n";
@@ -65,16 +63,16 @@ void	display_contact(Phonebook book)
 
 int main (void)
 {
-	Phonebook	book;//обьект класса вместе с ним создаются 8 пустых обтектов контактов
+	Phonebook	book;
 	std::string command;
-	std::string contact[5];//массив строк которые буду добавлять в контакты
+	std::string contact[5];
 
 	std::cout << "Enter your command: ";
 	std::cin >> command;
-	while (command != "EXIT")//сравнение 2 строк
+	while (command != "EXIT")
 	{
 		if (command == "ADD")
-		{//приглашение на ввод полей - фоомирую массив
+		{
 			std::cout << "Enter first name: ";
 			std::cin >> contact[0];
 			std::cout << "Enter last name: ";
@@ -85,14 +83,12 @@ int main (void)
 			std::cin >> contact[3];
 			std::cout << "Enter darkes secret: ";
 			std::cin >> contact[4];
-			// когда массив сформирован переда/ массив в обьект book вызываю его с мотодом add contact и передаю туда
-
+			// когда массив сформирован передаю массив в обьект book вызываю его с методом add contact и передаю туда
 			book.add_contact(Contact(contact));
 			std::cout << "contact added successfully!" << std::endl;
 		}
 		else if (command == "SEARCH")
 		{
-			
 			check_input(book);
 			display_contact(book);
 		}

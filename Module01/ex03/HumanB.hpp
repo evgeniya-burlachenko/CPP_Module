@@ -6,7 +6,7 @@
 /*   By: skelly <skelly@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 10:39:08 by skelly            #+#    #+#             */
-/*   Updated: 2022/01/20 12:52:18 by skelly           ###   ########.fr       */
+/*   Updated: 2022/01/26 21:33:07 by skelly           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,15 @@
 
 class HumanB
 {
-	std::string name;
+	std::string _name;
 	Weapon *weapon;//оружие через указатель
 	public:
-		HumanB(std::string name_b);
+		HumanB(std::string name);
+		HumanB(void);
 		~HumanB(void);
 		//методы:
 		void	attack(void);
-		void	setWeapon(Weapon &arms);
+		void	setWeapon(Weapon &weapon);
 		
 };
 

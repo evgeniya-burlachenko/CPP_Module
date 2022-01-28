@@ -6,7 +6,7 @@
 /*   By: skelly <skelly@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 20:16:45 by skelly            #+#    #+#             */
-/*   Updated: 2022/01/19 17:11:24 by skelly           ###   ########.fr       */
+/*   Updated: 2022/01/26 08:08:05 by skelly           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,14 @@
 
 class Zombie
 {
-	//по умолчанию все поля до директивы public - приватные
 	std::string name;
-	public:
-		Zombie(std::string);//конструктор
-		~Zombie(void);//деструктор
-		void	announce(void);//ф-ция обьявления имени
-	
+	public://модификатор доступа
+		Zombie(std::string);
+		~Zombie(void);
+		void	announce(void);
 };
-
-Zombie* newZombie(std::string name);//создание нового зомби на куче
+//создание нового зомби на куче new=malloc:
+Zombie* newZombie(std::string name);
+//рандом зомби - по факту - на стеке
 void randomChump(std::string name);
 #endif

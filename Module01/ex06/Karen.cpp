@@ -6,7 +6,7 @@
 /*   By: skelly <skelly@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/21 20:28:44 by skelly            #+#    #+#             */
-/*   Updated: 2022/01/21 23:48:25 by skelly           ###   ########.fr       */
+/*   Updated: 2022/01/24 15:15:18 by skelly           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,13 +69,13 @@ void Karen::complain(std::string level)
 	switch (i)
 	{
 		case 0:
-			(this->*func[0])();
+			(this->*func[0])(); //debug
 		case 1:
-			(this->*func[1])();
+			(this->*func[1])();//info
 		case 2:
-			(this->*func[2])();
+			(this->*func[2])();//warning
 		case 3:
-			(this->*func[3])();
+			(this->*func[3])();//error
 			break ;
 		default:
 			(this->*func[4])();	

@@ -1,15 +1,15 @@
 #include "Zombie.hpp"
-//описание класса
+
 Zombie::Zombie(std::string str)
 {
-	this->name = str;//конструктор
+	this->name = str;
 }
 
 Zombie::~Zombie(void)
 {
-	std::cout << this->name << " died" << std::endl;//деструктор
+	std::cout << this->name << " died" << std::endl;
 }
-//обьявление имени
+
 void Zombie::announce(void)
 {
 	std::cout << this->name << " BraiiiiiiinnnzzzZ..." << std::endl;
