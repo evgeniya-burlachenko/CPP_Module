@@ -6,7 +6,7 @@
 /*   By: skelly <skelly@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 22:11:05 by skelly            #+#    #+#             */
-/*   Updated: 2022/01/25 23:11:32 by skelly           ###   ########.fr       */
+/*   Updated: 2022/02/02 00:13:27 by skelly           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,31 +16,21 @@
 #include <iostream>
 #include <cmath>
 
-//каноническая форма
 class Fixed
-{// Значение дробных битов инициализируется равным 8:
+{
 	static	const int fractional_bits = 8;
 	int		fixed_point_value;
 	public:
 		Fixed(void);
 		~Fixed(void);
-		
 		Fixed(const Fixed &fixed);
-//Конструктор, который принимает постоянное целое число в качестве параметра:
-//Он преобразует его в соответствующее значение с фиксированной точкой
-		Fixed(const int value);
-//Конструктор, который принимает постоянное число с плавающей запятой в качестве параметра.
-//Он преобразует его в соответствующее значение с фиксированной точкой.		
-		Fixed(const float value);
-		
-		Fixed& operator=(const Fixed &fixed);
-		
+		Fixed(const int value);//принимает параметром int
+		Fixed(const float value);// принимает параметром float
+		const Fixed& operator=(const Fixed &fixed);
 		int getRawBits(void) const;
 		void setRawBits(int const raw);
-//преобразует значение с фиксированной запятой в значение с плавающей запятой:
-		float toFloat(void) const;
-//преобразует значение с фиксированной запятой в целое значение:
-		int toInt(void) const;
+		float toFloat(void) const;//fix point -> float:
+		int toInt(void) const;//fix point -> int:
 };
 
 //Перегрузка оператора вставки (<<), который вставляет представление числа с плавающей запятой

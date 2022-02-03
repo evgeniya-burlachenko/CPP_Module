@@ -6,7 +6,7 @@
 /*   By: skelly <skelly@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 08:06:55 by skelly            #+#    #+#             */
-/*   Updated: 2022/01/25 21:01:48 by skelly           ###   ########.fr       */
+/*   Updated: 2022/01/28 19:09:58 by skelly           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class Weapon
 {
 	std::string _type; //название оружия
 	public:
-		Weapon(std::string type);
+		Weapon(std::string _type);
 		Weapon(void);
 		~Weapon(void);
 		const	std::string &getType(void);//получает значение типа

@@ -5,6 +5,10 @@ Zombie::Zombie(std::string str)
 	this->name = str;
 }
 
+Zombie::Zombie()
+{
+	
+}
 Zombie::~Zombie(void)
 {
 	std::cout << this->name << " died" << std::endl;

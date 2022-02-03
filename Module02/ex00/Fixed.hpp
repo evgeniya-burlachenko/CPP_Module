@@ -6,7 +6,7 @@
 /*   By: skelly <skelly@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 22:11:05 by skelly            #+#    #+#             */
-/*   Updated: 2022/01/28 09:36:53 by skelly           ###   ########.fr       */
+/*   Updated: 2022/02/01 13:35:18 by skelly           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,19 +18,21 @@
 class Fixed
 {//int float - 4 байта или 32 бита-
 //задача - преобразовать числа в числа с фиксированной точкой
-//5 - 101 
-	
+//5 - 101
+static const int fractional_bits = 8; //мантиса
+int fixed_point_value;
+
 public:
-	Fixed(void);
-	Fixed(const Fixed &fixed);
-	Fixed &operator=(const Fixed &fixed);
-	~Fixed(void);
+	Fixed();
+	Fixed(const Fixed &fixed);//конструктор копирования
+	Fixed &operator=(const Fixed &fixed);//перезагрузка оператора присваиания
+	//благодаря перегрузке операторов мы можем выполнять со своими классами 
+	//те же операции, что и со встроенными типами данных
+	~Fixed();
 	
-	int getRawBits(void) const;
-	void setRawBits(int const raw);
-private:
-	static const int fractional_bits = 8; //мантиса
-	int fixed_point_value;
+	int getRawBits(void) const;//возвращает текущее значение с фикс точкой
+	void setRawBits(int const raw);//задает исходное значение с фикс точкой
+	
 };
 
 #endif

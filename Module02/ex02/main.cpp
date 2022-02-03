@@ -6,7 +6,7 @@
 /*   By: skelly <skelly@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/25 23:16:58 by skelly            #+#    #+#             */
-/*   Updated: 2022/01/26 00:29:37 by skelly           ###   ########.fr       */
+/*   Updated: 2022/02/01 13:26:10 by skelly           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int main(void)
 	Fixed const b(Fixed(5.05f) * Fixed(2));
 	
 	std::cout << a << std::endl;
-	std::cout << ++a << std::endl;
+	std::cout <<  ++a << std::endl;
 	std::cout << a << std::endl;
 	std::cout << a++ << std::endl;
 	std::cout << a << std::endl;

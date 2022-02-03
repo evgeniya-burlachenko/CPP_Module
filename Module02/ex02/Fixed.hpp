@@ -6,7 +6,7 @@
 /*   By: skelly <skelly@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 22:11:05 by skelly            #+#    #+#             */
-/*   Updated: 2022/01/28 10:16:23 by skelly           ###   ########.fr       */
+/*   Updated: 2022/02/01 14:42:45 by skelly           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,10 @@ class Fixed
 	public:
 		Fixed(void);
 		~Fixed(void);
+		
 		Fixed(const Fixed &fixed);
-		Fixed(const int value);
-		Fixed(const float value);
+		Fixed(const int fixed);
+		Fixed(const float fixed);
 		
 		Fixed& operator=(const Fixed &fixed);
 
@@ -34,17 +35,17 @@ class Fixed
 		float toFloat(void) const;
 		int toInt(void) const;
 		
-		bool operator>(Fixed fixed)const ;
-		bool operator<(Fixed fixed)const ;
-		bool operator>=( Fixed fixed)const;
-		bool operator<=( Fixed fixed)const;
-		bool operator==( Fixed fixed)const;
-		bool operator!=(Fixed fixed )const;
+		bool operator>(const Fixed &fixed) const;
+		bool operator<(const Fixed &fixed) const;
+		bool operator>=(const Fixed &fixed) const;
+		bool operator<=(const Fixed &fixed) const;
+		bool operator==(const Fixed &fixed) const;
+		bool operator!=(const Fixed &fixed) const;
 
-		Fixed operator+( Fixed fixed)const;
-		Fixed operator-( Fixed fixed)const;
-		Fixed operator*(Fixed fixed)const ;
-		Fixed operator/( Fixed fixed)const;
+		Fixed operator+(const Fixed &fixed)const;
+		Fixed operator-(const Fixed &fixed)const;
+		Fixed operator*(const Fixed &fixed)const;
+		Fixed operator/(const Fixed &fixed)const;
 		
 		Fixed& operator++();
 		Fixed operator++(int);
@@ -55,15 +56,9 @@ class Fixed
         static Fixed &max(Fixed &a, Fixed &b);
         static const Fixed &min(Fixed const &a, Fixed  const &b);
         static const Fixed &max(Fixed  const &a, Fixed const &b);
-
-
-
-		
-		
+	
 };
 
-//Перегрузка оператора вставки (<<), который вставляет представление числа с плавающей запятой
-//с фиксированной запятой в объект выходного потока, передаваемый в качестве параметра.
 std::ostream& operator<<(std::ostream &out, const Fixed &fixed);
 
 

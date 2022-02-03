@@ -6,7 +6,7 @@
 /*   By: skelly <skelly@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 20:16:45 by skelly            #+#    #+#             */
-/*   Updated: 2022/01/26 20:46:38 by skelly           ###   ########.fr       */
+/*   Updated: 2022/01/28 18:38:35 by skelly           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,11 @@ class Zombie
 {
 	std::string name;
 	public:
-		Zombie(std::string);
 		Zombie(void);
 		~Zombie(void);
 		void	announce(void);
+		std::string	get_name(void);
 		void	set_name(std::string str);
-	//	void	announce(std::string str);
 };
 
 Zombie* zombieHorde( int N, std::string name );
