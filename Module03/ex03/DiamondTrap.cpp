@@ -1,0 +1,126 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   DiamondTrap.cpp                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: skelly <skelly@student.21-school.ru>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/01/28 22:27:56 by skelly            #+#    #+#             */
+/*   Updated: 2022/02/03 17:40:36 by skelly           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "DiamondTrap.hpp"
+
+DiamondTrap::DiamondTrap() : ClapTrap(), ScavTrap(), FragTrap()
+{
+	this->set_Name(Name);
+	ClapTrap::set_Name(Name + "_clap_name");
+	this -> set_Hit_points(FragTrap::get_Hit_points());
+    this -> set_Energy_points(ScavTrap::get_Energy_points());
+    this -> set_Attack_damage(FragTrap::get_Attack_damage());
+	// set_Hit_points(100);
+	// set_Energy_points(100);
+	// set_Attack_damage(30);
+	std::cout << "DiamondTrap " << this->get_Name() 
+			<< " was born by default constructor " << this << std::endl;
+}
+
+DiamondTrap::~DiamondTrap()
+{
+	std::cout << "DiamondTrap " << this->get_Name() 
+			<< " was closed by Destructor " << std::endl;
+}
+
+DiamondTrap:: DiamondTrap(std::string Name) : ClapTrap(Name), ScavTrap(Name), FragTrap(Name)
+{
+	this->set_Name(Name);
+	ClapTrap::set_Name(Name + "_clap_name");
+	this -> set_Hit_points(FragTrap::get_Hit_points());
+    this -> set_Energy_points(ScavTrap::get_Energy_points());
+    this -> set_Attack_damage(FragTrap::get_Attack_damage());
+	// set_Name(Name);
+	// set_Hit_points(100);
+	// set_Energy_points(100);
+	// set_Attack_damage(30);
+	
+	std::cout << "DiamondTrap " << this->get_Name() 
+			<< " was created by string constructor " << this << std::endl;
+}
+
+DiamondTrap::DiamondTrap(const DiamondTrap &fixed) : ClapTrap(fixed), ScavTrap(fixed), FragTrap(fixed)
+{
+	// this -> set_Name(fixed.Name);
+    // this -> set_Hit_points(fixed.Hit_points);
+    // this -> set_Energy_points(fixed.Energy_points);
+    // this -> set_Attack_damage(fixed.Attack_damage);
+	std::cout << "DiamondTrap " << this->get_Name()  
+			<< " was created by copy constructor called " << this << std::endl;
+}
+
+DiamondTrap &DiamondTrap::operator=(const DiamondTrap &fixed)
+{
+	std::cout << "Assignation operator called " << this->get_Name() 
+			<< this << std::endl;
+	this -> set_Name(fixed.Name);
+    this -> set_Hit_points(fixed.Hit_points);
+    this -> set_Energy_points(fixed.Energy_points);
+    this -> set_Attack_damage(fixed.Attack_damage);
+	
+	return *this;
+}
+
+void DiamondTrap::attack(const std::string &target)
+{
+	//обращаюсь к области видимости скав трепа
+	ScavTrap::attack(target);
+}
+
+
+void DiamondTrap::whoAmI()
+{
+	std::cout << "My name is: " << this -> get_Name() << std::endl
+	<< "ClapTrap name is: " << ClapTrap::get_Name() << std::endl;
+
+}
+
+// int FragTrap::get_Hit_points()
+// {
+// 	return(this->Hit_points);
+// }
+
+// int FragTrap::get_Energy_points()
+// {
+// 	return(this->Energy_points);
+// }
+
+// int FragTrap::get_Attack_damage()
+// {
+// 	return(this->Attack_damage);
+// }
+
+std::string DiamondTrap::get_Name()
+{
+	return(this->Name);
+}
+
+// void FragTrap::set_Hit_points(unsigned int amount)
+// {
+// 	this->Hit_points = amount;
+
+// }
+// void FragTrap::set_Energy_points(unsigned int amount)
+// {
+// 	this->Energy_points = amount;
+// }
+
+// void FragTrap::set_Attack_damage(unsigned int amount)
+// {
+// 	this->Attack_damage = amount;
+// }
+
+void DiamondTrap::set_Name(std::string Name)
+{
+	this->Name = Name;
+}
+

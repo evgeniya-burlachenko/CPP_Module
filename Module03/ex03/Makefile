@@ -10,11 +10,11 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	ScavTrap
-HEADER		=	FragTrap.hpp ClapTrap.hpp
+NAME		=	DiamondTrap
+HEADER		=	FragTrap.hpp ClapTrap.hpp DiamondTrap.hpp
 CXX			=	c++
-CFLAGS		=	-Wall -Wextra -Werror -std=c++98
-SRCS		=	main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
+CFLAGS		=	-Wall -Wextra -Werror  -Wshadow -std=c++98
+SRCS		=	main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp
 OBJ			=	$(SRCS:.cpp=.o)
 
 all: $(NAME)

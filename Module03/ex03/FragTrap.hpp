@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   FlagTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skelly <skelly@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 22:27:59 by skelly            #+#    #+#             */
-/*   Updated: 2022/02/03 17:46:09 by skelly           ###   ########.fr       */
+/*   Updated: 2022/02/03 17:42:50 by skelly           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-# define SCAVTRAP_HPP
+#ifndef FRAGTRAP_HPP
+# define FRAGTRAP_HPP
 
 #include "ClapTrap.hpp"
 
 //наследник
-class ScavTrap : public ClapTrap
+class FragTrap : public virtual ClapTrap
 {
 	public: 
-		ScavTrap();
-		~ScavTrap();
-		ScavTrap(std::string Name);
-		ScavTrap(const ScavTrap &fixed);
-		ScavTrap& operator=(const ScavTrap &fixed);
+		FragTrap();
+		~FragTrap();
+		FragTrap(std::string Name);
+		FragTrap(const FragTrap &fixed);
+		FragTrap& operator=(const FragTrap &fixed);
 		
-		void attack(const std::string &target);
-		void guardGate();
+		// void attack(const std::string &target);
+		void highFivesGuys(void);
 
 		// int get_Hit_points();
 		// int get_Energy_points();

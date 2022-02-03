@@ -6,7 +6,7 @@
 /*   By: skelly <skelly@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 22:27:56 by skelly            #+#    #+#             */
-/*   Updated: 2022/02/03 17:46:21 by skelly           ###   ########.fr       */
+/*   Updated: 2022/02/03 17:45:39 by skelly           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ ScavTrap::ScavTrap()
 ScavTrap::~ScavTrap()
 {
 	std::cout << "ScavTrap " << this->get_Name() 
-			<< " was destroyed by Destructor " << std::endl;
+			<< " was killed by Destructor " << std::endl;
 }
 
 ScavTrap:: ScavTrap(std::string Name) : ClapTrap(Name)

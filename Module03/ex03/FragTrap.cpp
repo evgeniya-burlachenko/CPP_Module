@@ -1,55 +1,55 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.cpp                                       :+:      :+:    :+:   */
+/*   FlagTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skelly <skelly@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 22:27:56 by skelly            #+#    #+#             */
-/*   Updated: 2022/02/03 17:10:01 by skelly           ###   ########.fr       */
+/*   Updated: 2022/02/03 17:40:36 by skelly           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
-ScavTrap::ScavTrap()
+FragTrap::FragTrap()
 {
 	set_Name("No Name ");
 	set_Hit_points(100);
-	set_Energy_points(50);
-	set_Attack_damage(20);
-	std::cout << "ScavTrap " << this->get_Name() 
-			<< " was created by default constructor " << this << std::endl;
+	set_Energy_points(100);
+	set_Attack_damage(30);
+	std::cout << "FragTrap " << this->get_Name() 
+			<< " was born by default constructor " << this << std::endl;
 }
 
-ScavTrap::~ScavTrap()
+FragTrap::~FragTrap()
 {
-	std::cout << "ScavTrap " << this->get_Name() 
-			<< " was destroyed by Destructor " << std::endl;
+	std::cout << "FragTrap " << this->get_Name() 
+			<< " was closed by Destructor " << std::endl;
 }
 
-ScavTrap:: ScavTrap(std::string Name) : ClapTrap(Name)
+FragTrap:: FragTrap(std::string Name) : ClapTrap(Name)
 {
 	set_Name(Name);
 	set_Hit_points(100);
-	set_Energy_points(50);
-	set_Attack_damage(20);
+	set_Energy_points(100);
+	set_Attack_damage(30);
 	
-	std::cout << "ScavTrap " << this->get_Name() 
+	std::cout << "FragTrap " << this->get_Name() 
 			<< " was created by string constructor " << this << std::endl;
 }
 
-ScavTrap::ScavTrap(const ScavTrap &fixed) : ClapTrap(fixed)
+FragTrap::FragTrap(const FragTrap &fixed) : ClapTrap(fixed)
 {
 	// this -> set_Name(fixed.Name);
     // this -> set_Hit_points(fixed.Hit_points);
     // this -> set_Energy_points(fixed.Energy_points);
     // this -> set_Attack_damage(fixed.Attack_damage);
-	std::cout << "ScavTrap " << this->get_Name()  
+	std::cout << "FragTrap " << this->get_Name()  
 			<< " was created by copy constructor called " << this << std::endl;
 }
 
-ScavTrap &ScavTrap::operator=(const ScavTrap &fixed)
+FragTrap &FragTrap::operator=(const FragTrap &fixed)
 {
 	std::cout << "Assignation operator called " << this->get_Name() 
 			<< this << std::endl;
@@ -61,57 +61,57 @@ ScavTrap &ScavTrap::operator=(const ScavTrap &fixed)
 	return *this;
 }
 
-void ScavTrap::attack(const std::string &target)
+// void FragTrap::attack(const std::string &target)
+// {
+// std::cout << "FragTrap " << this -> get_Name() << " attack back " << target 
+// 		<<  " giving " << this -> get_Attack_damage() 
+// 		<<	" points of damage!" << std::endl;
+// }
+
+
+void FragTrap::highFivesGuys()
 {
-std::cout << "ScavTrap " << this -> get_Name() << " attack back " << target 
-		<<  " giving " << this -> get_Attack_damage() 
-		<<	" points of damage!" << std::endl;
+	std::cout << "FragTrap " << this->get_Name() << " has a special capacity tool" << std::endl;
+
 }
 
 
-void ScavTrap::guardGate()
-{
-	std::cout << "ScavTrap " << this->get_Name() << " have enterred in Gate keeper mode" << std::endl;
-
-}
-
-
-// int ScavTrap::get_Hit_points()
+// int FragTrap::get_Hit_points()
 // {
 // 	return(this->Hit_points);
 // }
 
-// int ScavTrap::get_Energy_points()
+// int FragTrap::get_Energy_points()
 // {
 // 	return(this->Energy_points);
 // }
 
-// int ScavTrap::get_Attack_damage()
+// int FragTrap::get_Attack_damage()
 // {
 // 	return(this->Attack_damage);
 // }
 
-// std::string ScavTrap::get_Name()
+// std::string FragTrap::get_Name()
 // {
 // 	return(this->Name);
 // }
 
-// void ScavTrap::set_Hit_points(unsigned int amount)
+// void FragTrap::set_Hit_points(unsigned int amount)
 // {
 // 	this->Hit_points = amount;
 
 // }
-// void ScavTrap::set_Energy_points(unsigned int amount)
+// void FragTrap::set_Energy_points(unsigned int amount)
 // {
 // 	this->Energy_points = amount;
 // }
 
-// void ScavTrap::set_Attack_damage(unsigned int amount)
+// void FragTrap::set_Attack_damage(unsigned int amount)
 // {
 // 	this->Attack_damage = amount;
 // }
 
-// void ScavTrap::set_Name(std::string amount)
+// void FragTrap::set_Name(std::string amount)
 // {
 // 	this->Name = amount;
 // }

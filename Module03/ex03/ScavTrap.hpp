@@ -6,7 +6,7 @@
 /*   By: skelly <skelly@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 22:27:59 by skelly            #+#    #+#             */
-/*   Updated: 2022/02/03 17:46:09 by skelly           ###   ########.fr       */
+/*   Updated: 2022/02/03 17:45:25 by skelly           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include "ClapTrap.hpp"
 
 //наследник
-class ScavTrap : public ClapTrap
+class ScavTrap : public virtual ClapTrap
 {
 	public: 
 		ScavTrap();
