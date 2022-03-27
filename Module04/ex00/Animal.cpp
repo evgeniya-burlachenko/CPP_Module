@@ -6,22 +6,15 @@
 /*   By: skelly <skelly@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 21:05:33 by skelly            #+#    #+#             */
-/*   Updated: 2022/02/03 22:13:36 by skelly           ###   ########.fr       */
+/*   Updated: 2022/02/16 00:04:48 by skelly           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 
-	Animal::Animal()
-	{
-		this->set_type("animal");
-		std::cout << "[Animal] : default constructor" << std::endl;
-	}
+	Animal::Animal(): _type("animal") { std::cout << "[Animal] : default constructor" << std::endl;}
 	
-	Animal::~Animal()
-	{
-		std::cout << "[Animal] : destructor" << std::endl;
-	}
+	Animal::~Animal() {std::cout << "[Animal] : destructor" << std::endl;}
 	
 	Animal::Animal(const Animal &Animal)
 	{
@@ -35,18 +28,8 @@
 		return *this;
 	}
 	
-	void Animal::makeSound()const
-	{
-		std::cout << "no sound" << std::endl;
-	}
+	void Animal::makeSound()const { std::cout << "no sound" << std::endl;}
 	
-	std::string Animal:: getType(void) const
-	{
-		return(this->type);
-	}
+	std::string Animal:: getType(void) const { return(this->_type);}
 	
-	void Animal::set_type(std::string string)
-	{
-		this->type = string;
-		
-	}
+	void Animal::set_type(std::string string) { this->_type = string;}

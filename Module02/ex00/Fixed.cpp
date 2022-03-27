@@ -6,7 +6,7 @@
 /*   By: skelly <skelly@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 22:15:14 by skelly            #+#    #+#             */
-/*   Updated: 2022/02/01 13:35:48 by skelly           ###   ########.fr       */
+/*   Updated: 2022/02/03 23:44:41 by skelly           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ Fixed &Fixed::operator=(const Fixed &fixed)
 	//возвращаю адрес на константнынй обьект, которому выполнила присваивание
 	return *this;
 }
-//-----------------
+//-----------------------------------------------------------------------------
 int Fixed::getRawBits(void) const
 {
 	std::cout << "getRawBits member function called" <<this << std::endl;

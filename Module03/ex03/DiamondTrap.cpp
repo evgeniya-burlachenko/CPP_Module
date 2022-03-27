@@ -6,67 +6,57 @@
 /*   By: skelly <skelly@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 22:27:56 by skelly            #+#    #+#             */
-/*   Updated: 2022/02/03 17:40:36 by skelly           ###   ########.fr       */
+/*   Updated: 2022/02/10 23:54:47 by skelly           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap() : ClapTrap(), ScavTrap(), FragTrap()
+DiamondTrap::DiamondTrap() 
 {
-	this->set_Name(Name);
-	ClapTrap::set_Name(Name + "_clap_name");
-	this -> set_Hit_points(FragTrap::get_Hit_points());
-    this -> set_Energy_points(ScavTrap::get_Energy_points());
-    this -> set_Attack_damage(FragTrap::get_Attack_damage());
-	// set_Hit_points(100);
-	// set_Energy_points(100);
-	// set_Attack_damage(30);
-	std::cout << "DiamondTrap " << this->get_Name() 
+	this->Name = "No name";
+	this -> Hit_points = (FragTrap::Hit_points);
+    this -> Energy_points = (ScavTrap::Energy_points);
+    this -> Attack_damage = (FragTrap::Attack_damage);
+	std::cout << "DiamondTrap " <<  this->Name
 			<< " was born by default constructor " << this << std::endl;
 }
 
 DiamondTrap::~DiamondTrap()
 {
-	std::cout << "DiamondTrap " << this->get_Name() 
-			<< " was closed by Destructor " << std::endl;
+	
+	std::cout << "DiamondTrap " << this->Name
+			<< " was closed by Destructor " << this <<std::endl;
 }
 
-DiamondTrap:: DiamondTrap(std::string Name) : ClapTrap(Name), ScavTrap(Name), FragTrap(Name)
+DiamondTrap:: DiamondTrap(std::string Name) : ClapTrap(), ScavTrap(Name), FragTrap(Name)
 {
-	this->set_Name(Name);
-	ClapTrap::set_Name(Name + "_clap_name");
-	this -> set_Hit_points(FragTrap::get_Hit_points());
-    this -> set_Energy_points(ScavTrap::get_Energy_points());
-    this -> set_Attack_damage(FragTrap::get_Attack_damage());
-	// set_Name(Name);
-	// set_Hit_points(100);
-	// set_Energy_points(100);
-	// set_Attack_damage(30);
+	this->Name = Name;
+	this->ClapTrap::Name += "_clap_name";
+	this -> Hit_points = (FragTrap::Hit_points);
+    this -> Energy_points = (ScavTrap::Energy_points);
+    this -> Attack_damage = (FragTrap::Attack_damage);
 	
-	std::cout << "DiamondTrap " << this->get_Name() 
+	std::cout << "DiamondTrap " <<  this->Name
 			<< " was created by string constructor " << this << std::endl;
 }
 
-DiamondTrap::DiamondTrap(const DiamondTrap &fixed) : ClapTrap(fixed), ScavTrap(fixed), FragTrap(fixed)
+DiamondTrap::DiamondTrap(const DiamondTrap &fixed): ClapTrap(fixed), ScavTrap(fixed), FragTrap(fixed)
 {
-	// this -> set_Name(fixed.Name);
-    // this -> set_Hit_points(fixed.Hit_points);
-    // this -> set_Energy_points(fixed.Energy_points);
-    // this -> set_Attack_damage(fixed.Attack_damage);
-	std::cout << "DiamondTrap " << this->get_Name()  
+	*this = fixed;
+	std::cout << "DiamondTrap " << this-> Name
 			<< " was created by copy constructor called " << this << std::endl;
 }
 
 DiamondTrap &DiamondTrap::operator=(const DiamondTrap &fixed)
 {
-	std::cout << "Assignation operator called " << this->get_Name() 
+	std::cout << "Assignation operator called "
 			<< this << std::endl;
-	this -> set_Name(fixed.Name);
-    this -> set_Hit_points(fixed.Hit_points);
-    this -> set_Energy_points(fixed.Energy_points);
-    this -> set_Attack_damage(fixed.Attack_damage);
-	
+	this ->Name= fixed.Name;
+	this->ClapTrap::Name  = fixed.ClapTrap::get_Name();
+    this -> Hit_points = (fixed.Hit_points);
+    this -> Energy_points = (fixed.Energy_points);
+    this -> Attack_damage = (fixed.Attack_damage);
 	return *this;
 }
 
@@ -76,51 +66,13 @@ void DiamondTrap::attack(const std::string &target)
 	ScavTrap::attack(target);
 }
 
-
+//конфликтующие имена
 void DiamondTrap::whoAmI()
 {
-	std::cout << "My name is: " << this -> get_Name() << std::endl
-	<< "ClapTrap name is: " << ClapTrap::get_Name() << std::endl;
-
+	std::cout << "----------------------------------------------------------------" <<std::endl;
+	std::cout << "DiamondTrap Name is: " << this -> Name << "; "
+	<< "ClapTrap Name is: " << ClapTrap::get_Name() << std::endl;
+		std::cout << "----------------------------------------------------------------" <<std::endl;
 }
 
-// int FragTrap::get_Hit_points()
-// {
-// 	return(this->Hit_points);
-// }
-
-// int FragTrap::get_Energy_points()
-// {
-// 	return(this->Energy_points);
-// }
-
-// int FragTrap::get_Attack_damage()
-// {
-// 	return(this->Attack_damage);
-// }
-
-std::string DiamondTrap::get_Name()
-{
-	return(this->Name);
-}
-
-// void FragTrap::set_Hit_points(unsigned int amount)
-// {
-// 	this->Hit_points = amount;
-
-// }
-// void FragTrap::set_Energy_points(unsigned int amount)
-// {
-// 	this->Energy_points = amount;
-// }
-
-// void FragTrap::set_Attack_damage(unsigned int amount)
-// {
-// 	this->Attack_damage = amount;
-// }
-
-void DiamondTrap::set_Name(std::string Name)
-{
-	this->Name = Name;
-}
 

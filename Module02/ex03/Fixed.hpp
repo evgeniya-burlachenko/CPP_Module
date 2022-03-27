@@ -6,7 +6,7 @@
 /*   By: skelly <skelly@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 22:11:05 by skelly            #+#    #+#             */
-/*   Updated: 2022/01/28 21:44:17 by skelly           ###   ########.fr       */
+/*   Updated: 2022/02/03 23:43:09 by skelly           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,12 +55,7 @@ class Fixed
 		static Fixed &min(Fixed &a, Fixed &b);
         static Fixed &max(Fixed &a, Fixed &b);
         static const Fixed &min(Fixed const &a, Fixed  const &b);
-        static const Fixed &max(Fixed  const &a, Fixed const &b);
-
-
-
-		
-		
+        static const Fixed &max(Fixed  const &a, Fixed const &b);	
 };
 
 //Перегрузка оператора вставки (<<), который вставляет представление числа с плавающей запятой

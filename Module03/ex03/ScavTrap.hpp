@@ -6,7 +6,7 @@
 /*   By: skelly <skelly@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 22:27:59 by skelly            #+#    #+#             */
-/*   Updated: 2022/02/03 17:45:25 by skelly           ###   ########.fr       */
+/*   Updated: 2022/02/10 20:24:52 by skelly           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@
 #include "ClapTrap.hpp"
 
 //наследник
-class ScavTrap : public virtual ClapTrap
+//благодар virtual родитель наследуется 1 раз
+class ScavTrap : virtual public ClapTrap
 {
 	public: 
 		ScavTrap();
@@ -27,16 +28,6 @@ class ScavTrap : public virtual ClapTrap
 		
 		void attack(const std::string &target);
 		void guardGate();
-
-		// int get_Hit_points();
-		// int get_Energy_points();
-		// int get_Attack_damage();
-		// std::string	get_Name(void);
-
-		// void set_Hit_points(unsigned int amount);
-		// void set_Energy_points(unsigned int amount);
-		// void set_Attack_damage(unsigned int amount);
-		// void set_Name(std::string string);
 
 };
 

@@ -6,18 +6,18 @@
 /*   By: skelly <skelly@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 22:27:56 by skelly            #+#    #+#             */
-/*   Updated: 2022/02/03 21:17:30 by skelly           ###   ########.fr       */
+/*   Updated: 2022/02/10 23:45:09 by skelly           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap()
+FragTrap::FragTrap() : ClapTrap()
 {
-	set_Name("No Name ");
-	set_Hit_points(100);
-	set_Energy_points(100);
-	set_Attack_damage(30);
+	this->set_Name("No Name ");
+	this->set_Hit_points(100);
+	this->set_Energy_points(100);
+	this->set_Attack_damage(30);
 	std::cout << "FragTrap " << this->get_Name() 
 			<< " was born by default constructor " << this << std::endl;
 }
@@ -30,10 +30,10 @@ FragTrap::~FragTrap()
 
 FragTrap:: FragTrap(std::string Name) : ClapTrap(Name)
 {
-	set_Name(Name);
-	set_Hit_points(100);
-	set_Energy_points(100);
-	set_Attack_damage(30);
+	this->set_Name(Name);
+	this->set_Hit_points(100);
+	this->set_Energy_points(100);
+	this->set_Attack_damage(30);
 	
 	std::cout << "FragTrap " << this->get_Name() 
 			<< " was created by string constructor " << this << std::endl;
@@ -41,10 +41,7 @@ FragTrap:: FragTrap(std::string Name) : ClapTrap(Name)
 
 FragTrap::FragTrap(const FragTrap &fixed) : ClapTrap(fixed)
 {
-	// this -> set_Name(fixed.Name);
-    // this -> set_Hit_points(fixed.Hit_points);
-    // this -> set_Energy_points(fixed.Energy_points);
-    // this -> set_Attack_damage(fixed.Attack_damage);
+	*this = fixed;
 	std::cout << "FragTrap " << this->get_Name()  
 			<< " was created by copy constructor called " << this << std::endl;
 }
@@ -61,58 +58,9 @@ FragTrap &FragTrap::operator=(const FragTrap &fixed)
 	return *this;
 }
 
-// void FragTrap::attack(const std::string &target)
-// {
-// std::cout << "FragTrap " << this -> get_Name() << " attack back " << target 
-// 		<<  " giving " << this -> get_Attack_damage() 
-// 		<<	" points of damage!" << std::endl;
-// }
-
-
 void FragTrap::highFivesGuys()
 {
 	std::cout << "FragTrap " << this->get_Name() << " has a special capacity tool" << std::endl;
 
 }
-
-
-// int FragTrap::get_Hit_points()
-// {
-// 	return(this->Hit_points);
-// }
-
-// int FragTrap::get_Energy_points()
-// {
-// 	return(this->Energy_points);
-// }
-
-// int FragTrap::get_Attack_damage()
-// {
-// 	return(this->Attack_damage);
-// }
-
-// std::string FragTrap::get_Name()
-// {
-// 	return(this->Name);
-// }
-
-// void FragTrap::set_Hit_points(unsigned int amount)
-// {
-// 	this->Hit_points = amount;
-
-// }
-// void FragTrap::set_Energy_points(unsigned int amount)
-// {
-// 	this->Energy_points = amount;
-// }
-
-// void FragTrap::set_Attack_damage(unsigned int amount)
-// {
-// 	this->Attack_damage = amount;
-// }
-
-// void FragTrap::set_Name(std::string amount)
-// {
-// 	this->Name = amount;
-// }
 

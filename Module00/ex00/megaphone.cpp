@@ -6,7 +6,7 @@
 /*   By: skelly <skelly@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 09:03:26 by skelly            #+#    #+#             */
-/*   Updated: 2022/01/18 09:03:27 by skelly           ###   ########.fr       */
+/*   Updated: 2022/02/09 14:22:17 by skelly           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ int main(int argc, char **argv)
 		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
 	else
 	{
-		i = 1;
 		for(i = 1; i < argc; i++)
 		{
 			j = -1;

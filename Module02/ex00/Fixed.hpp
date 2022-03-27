@@ -6,7 +6,7 @@
 /*   By: skelly <skelly@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 22:11:05 by skelly            #+#    #+#             */
-/*   Updated: 2022/02/01 13:35:18 by skelly           ###   ########.fr       */
+/*   Updated: 2022/02/09 20:29:27 by skelly           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,10 @@
 # define FIXED_HPP
 
 #include <iostream>
-//каноническая форма
+
 class Fixed
 {//int float - 4 байта или 32 бита-
 //задача - преобразовать числа в числа с фиксированной точкой
-//5 - 101
 static const int fractional_bits = 8; //мантиса
 int fixed_point_value;
 

@@ -6,16 +6,10 @@
 /*   By: skelly <skelly@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 20:41:02 by skelly            #+#    #+#             */
-/*   Updated: 2022/01/23 23:27:40 by skelly           ###   ########.fr       */
+/*   Updated: 2022/02/09 18:27:59 by skelly           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie* newZombie(std::string name)
-{
-	Zombie *new_zombie = new Zombie(name);
-	return(new_zombie);
-}
-//оператор new - оперативное выделение памяти
-//если в сторонеей ф-ции вызываем ф-цию с именем класса - это значит мы вызываем конструктор
+Zombie* newZombie(std::string name) {return new Zombie(name);}

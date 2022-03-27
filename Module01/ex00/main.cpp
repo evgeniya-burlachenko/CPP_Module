@@ -6,7 +6,7 @@
 /*   By: skelly <skelly@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 20:35:36 by skelly            #+#    #+#             */
-/*   Updated: 2022/01/26 19:28:23 by skelly           ###   ########.fr       */
+/*   Updated: 2022/02/09 23:55:54 by skelly           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,10 @@ int main(void)
 	Zombie	zombie("Zombie_on_stack");
 	zombie.announce();
 	
-	Zombie *zombie2 = newZombie("Zombie_on_heach");
+	
+	
+	Zombie *zombie2 = newZombie("Zombie_on_heap");
 	zombie2->announce();
-
 	randomChump("Zombie_randomChump_on_stack");
 	delete zombie2; 
 	//связка new-delete (аналогично malloc-free)

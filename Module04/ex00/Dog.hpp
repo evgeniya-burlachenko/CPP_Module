@@ -6,7 +6,7 @@
 /*   By: skelly <skelly@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 20:40:14 by skelly            #+#    #+#             */
-/*   Updated: 2022/02/03 22:20:24 by skelly           ###   ########.fr       */
+/*   Updated: 2022/02/11 18:41:15 by skelly           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Dog:public Animal
 		~Dog();	
 		Dog(const Dog &Dog);
 		Dog &operator=(const Dog &Dog);
-		virtual void makeSound() const;
+		void makeSound() const;
 };
 
 #endif

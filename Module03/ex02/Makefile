@@ -6,11 +6,11 @@
 #    By: skelly <skelly@student.21-school.ru>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/18 09:03:38 by skelly            #+#    #+#              #
-#    Updated: 2022/02/03 17:40:36 by skelly           ###   ########.fr        #
+#    Updated: 2022/02/10 19:55:49 by skelly           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	ScavTrap
+NAME		=	FragTrap
 HEADER		=	FragTrap.hpp ClapTrap.hpp
 CXX			=	c++
 CFLAGS		=	-Wall -Wextra -Werror -std=c++98

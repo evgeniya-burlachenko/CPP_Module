@@ -6,7 +6,7 @@
 /*   By: skelly <skelly@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/21 20:28:44 by skelly            #+#    #+#             */
-/*   Updated: 2022/01/24 15:15:18 by skelly           ###   ########.fr       */
+/*   Updated: 2022/02/08 17:09:50 by skelly           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,5 +79,7 @@ void Karen::complain(std::string level)
 			break ;
 		default:
 			(this->*func[4])();	
+			
+			
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: skelly <skelly@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 09:03:31 by skelly            #+#    #+#             */
-/*   Updated: 2022/01/28 19:14:17 by skelly           ###   ########.fr       */
+/*   Updated: 2022/02/09 13:54:35 by skelly           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class Contact//экземпляр класса
 
 public:
 	Contact(std::string data[]);
-	Contact(); //конструктор по умолчанию
+	Contact();
 	~Contact();
 	
 	std::string get_first_name(void);

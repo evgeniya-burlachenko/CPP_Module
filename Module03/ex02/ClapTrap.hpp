@@ -6,7 +6,7 @@
 /*   By: skelly <skelly@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 22:27:59 by skelly            #+#    #+#             */
-/*   Updated: 2022/02/03 00:43:29 by skelly           ###   ########.fr       */
+/*   Updated: 2022/02/10 19:31:49 by skelly           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,15 +35,15 @@ class ClapTrap
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);
 
-		int get_Hit_points();
-		int get_Energy_points();
-		int get_Attack_damage();
-		std::string get_Name(void);
+		int get_Hit_points() const;
+		int get_Energy_points() const;
+		int get_Attack_damage() const;
+		std::string get_Name(void) const;
 
-		void set_Hit_points(unsigned int amount);
-		void set_Energy_points(unsigned int amount);
-		void set_Attack_damage(unsigned int amount);
-		void set_Name(std::string string);
+		void set_Hit_points(unsigned int const amount);
+		void set_Energy_points(unsigned int const amount);
+		void set_Attack_damage(unsigned int constamount);
+		void set_Name(std::string const string);
 };
 
 #endif

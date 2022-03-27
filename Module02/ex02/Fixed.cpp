@@ -6,7 +6,7 @@
 /*   By: skelly <skelly@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 22:15:14 by skelly            #+#    #+#             */
-/*   Updated: 2022/02/01 14:42:52 by skelly           ###   ########.fr       */
+/*   Updated: 2022/02/10 13:43:46 by skelly           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -133,7 +133,7 @@ Fixed Fixed::operator*(const Fixed &fixed) const
 {
 	Fixed res;
 	
-	res.setRawBits((((long)this->fixed_point_value * (long)fixed.fixed_point_value) >> fractional_bits));
+	res.setRawBits((((long)this->fixed_point_value * (long)fixed.fixed_point_value) >> fractional_bits));//направо
 	return(res);
 	
 }
@@ -142,7 +142,7 @@ Fixed Fixed::operator/(const Fixed &fixed) const
 {
 	Fixed res;
 	
-	res.setRawBits(((float) this->fixed_point_value / fixed.fixed_point_value) * (1  << fractional_bits));
+	res.setRawBits(((float) this->fixed_point_value / fixed.fixed_point_value) * (1  << fractional_bits));//налево
 	return(res);
 	
 }

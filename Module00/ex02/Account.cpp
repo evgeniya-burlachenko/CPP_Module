@@ -6,7 +6,7 @@
 /*   By: skelly <skelly@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 09:28:15 by skelly            #+#    #+#             */
-/*   Updated: 2022/01/23 16:04:30 by skelly           ###   ########.fr       */
+/*   Updated: 2022/02/09 16:11:02 by skelly           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 #include <iostream>
 #include <ctime>
 
-int Account::_nbAccounts = 0;
-int Account::_totalAmount = 0;
-int Account::_totalNbDeposits = 0;
+int Account::_nbAccounts = 0;//кол-во счетов
+int Account::_totalAmount = 0;//общая сумма
+int Account::_totalNbDeposits = 0;//глобальные депозиты
 int Account::_totalNbWithdrawals = 0;
 //---------------------------------------------------------
 int Account::checkAmount(void) const
@@ -28,25 +28,7 @@ int Account::checkAmount(void) const
 //getTotalAmount
 //getNbDeposits
 //getNbWithdrawals
-int Account::getNbAccounts(void)
-{
-	return(_nbAccounts);
-}
 
-int Account::getTotalAmount(void)
-{
-	return(_totalAmount);
-}
-
-int Account::getNbDeposits(void)
-{
-	return(_totalNbDeposits);
-}
-
-int Account::getNbWithdrawals(void)
-{
-	return(_totalNbWithdrawals);
-}
 //---------------------------------------------------------------
 Account::Account(int initial_deposit)
 {
@@ -86,7 +68,7 @@ Account::~Account()
 	std::cout  << ";closed" << std::endl;
 }
 //-----------------------------------------------------------------------
-void	Account::_displayTimestamp(void)
+void	Account::_displayTimestamp(void)//вывод времени
 {
 	std::time_t t;
 	char	time[100];
@@ -101,6 +83,7 @@ void	Account::displayAccountsInfos(void)
 {
 //распечатывает информацию обо всех счетах
 //строка 9; 26; 43 - accounts:8;total:20049;deposits:0;withdrawals:0
+//test.cpp - 40 50 60
 	_displayTimestamp();
 	std::cout << "accounts:" << _nbAccounts;
 	std::cout << ";total:" << _totalAmount;
@@ -124,7 +107,7 @@ void	Account::makeDeposit(int deposit)
 	//18-25; 
 	this->_amount += deposit;
 	this->_nbDeposits += 1;//кол-во депозитов
-	_totalNbDeposits += 1;//глобальные депозиты
+	_totalNbDeposits += 1;
 	_totalAmount += deposit;
 
 	_displayTimestamp();
@@ -157,4 +140,24 @@ bool	Account::makeWithdrawal(int withdrawal)
 	std::cout << ";amount:" << this->_amount;
 	std::cout << ";nb_withdrawals:" << this->_nbWithdrawals << std::endl;
 	return(1);
+}
+
+int Account::getNbAccounts(void)
+{
+	return(_nbAccounts);
+}
+
+int Account::getTotalAmount(void)
+{
+	return(_totalAmount);
+}
+
+int Account::getNbDeposits(void)
+{
+	return(_totalNbDeposits);
+}
+
+int Account::getNbWithdrawals(void)
+{
+	return(_totalNbWithdrawals);
 }

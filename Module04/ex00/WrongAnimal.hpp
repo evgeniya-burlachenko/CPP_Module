@@ -6,7 +6,7 @@
 /*   By: skelly <skelly@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 20:11:54 by skelly            #+#    #+#             */
-/*   Updated: 2022/02/03 22:25:32 by skelly           ###   ########.fr       */
+/*   Updated: 2022/02/16 00:05:04 by skelly           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@
 class WrongAnimal
 {
 	protected:
-		std::string type;
+		std::string _type;
 	public:
 		WrongAnimal();
-		virtual ~WrongAnimal();
+		~WrongAnimal();
 		WrongAnimal(const WrongAnimal &WrongAnimal);
 		WrongAnimal& operator=(const WrongAnimal &Animal);
 		void makeSound() const;

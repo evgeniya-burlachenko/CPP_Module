@@ -6,14 +6,14 @@
 #    By: skelly <skelly@student.21-school.ru>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/18 09:03:38 by skelly            #+#    #+#              #
-#    Updated: 2022/01/23 22:06:03 by skelly           ###   ########.fr        #
+#    Updated: 2022/02/09 16:48:36 by skelly           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		=	Zombie
 HEADER		=	Zombie.hpp
 CXX			=	c++
-CFLAGS		=	-Wall -Wextra -Werror -std=c++98
+CFLAGS		=	-Wall -Wextra -Werror -std=c++98 
 SRCS		=	main.cpp newZombie.cpp randomChump.cpp Zombie.cpp
 OBJ			=	$(SRCS:.cpp=.o)
 

@@ -6,13 +6,13 @@
 /*   By: skelly <skelly@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 09:03:34 by skelly            #+#    #+#             */
-/*   Updated: 2022/01/28 19:13:58 by skelly           ###   ########.fr       */
+/*   Updated: 2022/02/09 14:57:18 by skelly           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "phonebook.hpp"
 
-void check_input(Phonebook book)
+void check_input(Phonebook book)//SEARCH
 {
 	std::cout << "     index|first name| last name|  nickname" << std::endl;
 	for (int i = 0; i < book.getSize(); i++)
@@ -40,7 +40,7 @@ void check_input(Phonebook book)
 	}
 }
 
-void	display_contact(Phonebook book)
+void	display_contact(Phonebook book)//Enter index
 {
 	int index;
 	std::string buf;
@@ -96,3 +96,10 @@ int main (void)
 		std::cin >> command;
 	} 
 }
+
+// методы, которые не меняют класс, должны быть const. 
+// Передача объектов, которые не будут изменены, 
+// лучше передавать по константной ссылке)). 
+// Чтение из stdin имен пользователя должно происходить
+// вне класса PhoneBook. 
+// Имена должны передаваться по аргументу 
